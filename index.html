@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Бойцовский клуб | Тренировки для взрослых и детей</title>
+    <title>Клуб единоборств Халид | Тренировки в Казани</title>
     <style>
         * {
             margin: 0;
@@ -18,14 +18,12 @@
             line-height: 1.5;
         }
 
-        /* Контейнер */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
 
-        /* Заголовки */
         h1 {
             font-size: 2.8rem;
             font-weight: 800;
@@ -38,7 +36,7 @@
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             margin: 2rem 0 1rem 0;
             border-left: 5px solid #d32f2f;
             padding-left: 1rem;
@@ -50,7 +48,6 @@
             color: #fff;
         }
 
-        /* Герой (первый экран) */
         .hero {
             text-align: center;
             padding: 2rem 0 1rem 0;
@@ -76,7 +73,6 @@
             border: 1px solid #d32f2f40;
         }
 
-        /* Карточки цен */
         .price-grid {
             display: flex;
             flex-wrap: wrap;
@@ -165,23 +161,11 @@
             text-align: center;
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #d32f2f;
-            color: #d32f2f;
-        }
-
-        .btn-outline:hover {
-            background: #d32f2f;
-            color: white;
-        }
-
         .btn:hover {
             background: #b71c1c;
             transform: scale(1.02);
         }
 
-        /* Расписание */
         .schedule {
             background: #0e1016;
             border-radius: 28px;
@@ -224,7 +208,6 @@
             color: #aaaec2;
         }
 
-        /* Контакты и CTA */
         .contact-section {
             background: linear-gradient(145deg, #0d0f14, #090b10);
             border-radius: 32px;
@@ -234,15 +217,7 @@
             border: 1px solid #2a2c33;
         }
 
-        .contact-icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .contact-item {
+        .contact-phone {
             background: #1a1d26;
             padding: 0.8rem 1.6rem;
             border-radius: 60px;
@@ -253,12 +228,12 @@
             transition: 0.2s;
             text-decoration: none;
             color: #e6e9f0;
+            font-size: 1.2rem;
         }
 
-        .contact-item:hover {
+        .contact-phone:hover {
             background: #d32f2f;
             color: white;
-            transform: translateY(-2px);
         }
 
         .footer {
@@ -270,10 +245,12 @@
             padding-top: 2rem;
         }
 
-        /* адаптация */
         @media (max-width: 700px) {
             h1 {
                 font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.4rem;
             }
             .container {
                 padding: 1.2rem;
@@ -285,29 +262,18 @@
                 min-width: 130px;
             }
         }
-
-        .highlight {
-            color: #d32f2f;
-        }
-        .btn-wa {
-            background: #25D366;
-            border: none;
-        }
-        .btn-wa:hover {
-            background: #128C7E;
-        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="hero">
-        <div class="badge">🔥 Официальная секция бойцовского клуба 🔥</div>
+        <!-- Изменённый текст сверху -->
+        <div class="badge">🔥 Клуб единоборств Халид 🔥</div>
         <h1>Стань сильнее духом и телом</h1>
         <p>Бокс | АРБ (Армейский рукопашный бой) | Дзюдо<br>Группы для взрослых и детей. Первая тренировка — бесплатно!</p>
     </div>
 
-    <!-- Блок цен -->
-    <h2>💰 Абонементы на месяц</h2>
+    <h2>Абонементы на месяц</h2>
     <div class="price-grid">
         <div class="price-card">
             <div class="card-title">ВЗРОСЛЫЕ</div>
@@ -334,7 +300,6 @@
         </div>
     </div>
 
-    <!-- Расписание -->
     <h2>📅 Расписание тренировок</h2>
     <div class="schedule">
         <div class="days">
@@ -352,31 +317,25 @@
         <p style="margin-top: 1.2rem; font-size: 0.9rem; text-align: center;">✔️ Занятия ведут мастера спорта. ✔️ Разминка, спарринги, ОФП. ✔️ Детские группы — игровая форма, дисциплина.</p>
     </div>
 
-    <!-- Почему мы + доп. блок -->
     <h2>💪 Почему выбирают нас</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; margin: 1rem 0 2rem 0;">
-        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Травмобезопасность, зал с рингом и татами</div>
-        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Удобное метро, раздевалки, душ</div>
-        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Пробная неделя — бесплатно!</div>
+        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Раздевалки, душ</div>
+        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Первое занятие бесплатное!</div>
     </div>
 
-    <!-- Контакты и кнопки связи -->
     <div id="contact" class="contact-section">
-        <h3 style="margin-top:0;">📞 Начни тренировки сегодня</h3>
-        <p style="margin-bottom: 1rem;">Остались вопросы? Позвоните или напишите — подберём удобную группу.</p>
-        <div class="contact-icons">
-            <a href="tel:+79001234567" class="contact-item">📱 +7 (900) 123-45-67</a>
-            <a href="https://wa.me/79001234567" target="_blank" class="contact-item btn-wa" style="background:#1f2c1f;">💬 WhatsApp</a>
-            <a href="https://t.me/your_fightclub" target="_blank" class="contact-item">📲 Telegram</a>
+        <h3 style="margin-top:0;">📞 Свяжитесь с нами</h3>
+        <p style="margin-bottom: 1rem;">Макс — тренер и администратор, ответит на все вопросы</p>
+        <div style="justify-content: center;">
+            <a href="tel:+79001234567" class="contact-phone">📱 Макс: +7 (900) 123-45-67</a>
         </div>
         <div style="margin-top: 1rem;">
-            <a href="https://wa.me/79001234567?text=Здравствуйте! Хочу записаться на тренировку." target="_blank" class="btn btn-wa" style="width: auto; padding: 0.8rem 2rem;">✍️ Купить абонемент онлайн</a>
-            <p style="margin-top: 0.8rem; font-size: 0.85rem;">📍 Адрес: г. Москва, ул. Спортивная, 10 (м. Спортивная, 5 мин пешком)</p>
+            <p style="font-size: 0.9rem;">📍 Адрес: г. Казань, ул. Фрунзе, д.17 (около первого подъезда)</p>
         </div>
     </div>
 
     <div class="footer">
-        © Бойцовский клуб "Титан" | 3 тренировки в неделю | Гибкая система абонементов
+        © Клуб единоборств "Халид" | 3 тренировки в неделю | Гибкая система абонементов
     </div>
 </div>
 </body>
