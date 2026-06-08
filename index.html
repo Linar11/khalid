@@ -66,7 +66,7 @@
             margin-bottom: 1rem;
         }
 
-        .address-top {
+        .address-top, .address-bottom {
             background: #111;
             display: inline-block;
             padding: 0.5rem 1.5rem;
@@ -78,7 +78,7 @@
             text-decoration: none;
             transition: 0.2s;
         }
-        .address-top:hover {
+        .address-top:hover, .address-bottom:hover {
             background: #F5B700;
             color: #0a0a0a;
         }
@@ -251,6 +251,12 @@
             border: 1px solid #F5B700;
         }
 
+        .contact-link img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
         .contact-link:hover {
             background: #F5B700;
             color: #0a0a0a;
@@ -332,7 +338,7 @@
             .day-card {
                 min-width: 130px;
             }
-            .contact-link, .phone-link {
+            .contact-link, .phone-link, .address-bottom {
                 width: 100%;
                 justify-content: center;
             }
@@ -352,7 +358,6 @@
 
     <h2>Абонементы на месяц</h2>
     <div class="price-grid">
-        <!-- Сначала ДЕТИ -->
         <div class="price-card">
             <div class="card-title">ДЕТИ</div>
             <div class="age">4 – 17 лет</div>
@@ -364,7 +369,6 @@
             </div>
             <a href="#contact" class="btn">Записаться на бесплатную тренировку →</a>
         </div>
-        <!-- Потом ВЗРОСЛЫЕ -->
         <div class="price-card">
             <div class="card-title">ВЗРОСЛЫЕ</div>
             <div class="age">18+ лет</div>
@@ -409,17 +413,24 @@
         <h3 style="margin-top:0;">📞 Свяжитесь с нами</h3>
         <p style="margin-bottom: 1rem;">Напишите в мессенджер MAX или позвоните — ответим на все вопросы</p>
         <div class="contact-links">
-            <!-- Обновлённая ссылка для личных сообщений MAX -->
-            <a href="https://max.ru/u/f9LHodD0cOL8jAZzB-AtY907kMk9fnUqaW2cyHfOf726tuXMKcr3D6RZs6E" target="_blank" class="contact-link">💬 MAX — личные сообщения</a>
-            <!-- Ссылка на группу MAX (оставлена без изменений) -->
-            <a href="https://max.ru/join/7At9c_9G-VrIzvG8aIDENjZ1vYM5IQ96qqL2g5IgRb0" target="_blank" class="contact-link">👥 Группа MAX (чат клуба)</a>
+            <!-- Кнопка с иконкой MAX, текст "написать в MAX" -->
+            <a href="https://max.ru/u/f9LHodD0cOL8jAZzB-AtY907kMk9fnUqaW2cyHfOf726tuXMKcr3D6RZs6E" target="_blank" class="contact-link">
+                <img src="MAX-32x32.png" alt="MAX"> написать в MAX
+            </a>
+            <!-- Кнопка группы MAX с той же иконкой -->
+            <a href="https://max.ru/join/7At9c_9G-VrIzvG8aIDENjZ1vYM5IQ96qqL2g5IgRb0" target="_blank" class="contact-link">
+                <img src="MAX-32x32.png" alt="MAX"> Группа MAX (чат клуба)
+            </a>
         </div>
-        <!-- Добавлен номер телефона -->
         <div>
             <a href="tel:+79600567002" class="phone-link">📞 +7 (960) 056-70-02</a>
         </div>
         <div style="margin-top: 1rem;">
-            <p style="font-size: 0.9rem;">📍 Адрес: г. Казань, ул. Фрунзе, д.17 (около первого подъезда)</p>
+            <!-- Адрес внизу теперь тоже кликабельный, ведёт на те же Яндекс.Карты -->
+            <a href="https://yandex.ru/maps/?text=клуб%20единоборств%20халид%20казань%20ул%20фрунзе%2017&mode=search"
+               class="address-bottom" target="_blank">
+                📍 г. Казань, ул. Фрунзе, д.17 (около первого подъезда)
+            </a>
         </div>
     </div>
 
