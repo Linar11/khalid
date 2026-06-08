@@ -35,18 +35,19 @@
             border-radius: 60px;
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
+            justify-content: center;
+            gap: 12px;
             font-weight: 800;
             font-size: 1.8rem;
             margin-bottom: 1rem;
             border: 2px solid #F5B700;
             letter-spacing: 1px;
         }
+
         .badge img {
-            width: 32px;
-            height: 32px;
-            display: inline-block;
-            vertical-align: middle;
+            width: 64px;   /* Увеличено в 2 раза (было бы 32px) */
+            height: auto;
+            display: block;
         }
 
         .subhead {
@@ -342,11 +343,10 @@
             .badge {
                 font-size: 1.2rem;
                 padding: 0.4rem 1rem;
-                gap: 0.4rem;
+                gap: 8px;
             }
             .badge img {
-                width: 24px;
-                height: 24px;
+                width: 48px; /* на мобильных чуть меньше, но тоже увеличенный */
             }
             .subhead {
                 font-size: 1rem;
@@ -373,8 +373,11 @@
 <body>
 <div class="container">
     <div class="hero">
+        <!-- Заменяем огоньки на images.png слева и справа -->
         <div class="badge">
-            <img src="images.png" alt="icon"> Клуб единоборств Халид <img src="images.png" alt="icon">
+            <img src="images.png" alt="icon">
+            <span>Клуб единоборств Халид</span>
+            <img src="images.png" alt="icon">
         </div>
         <div class="subhead">Стань сильнее духом и телом</div>
         <a href="https://yandex.ru/maps/?text=клуб%20единоборств%20халид%20казань%20ул%20фрунзе%2017&mode=search"
