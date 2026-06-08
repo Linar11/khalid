@@ -2,38 +2,382 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои услуги</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Бойцовский клуб | Тренировки для взрослых и детей</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #0a0c10;
+            color: #e6e9f0;
             line-height: 1.5;
         }
-        h1 { color: #333; }
-        .price { font-size: 1.2em; margin: 10px 0; }
-        .contact { margin-top: 30px; background: #f5f5f5; padding: 15px; border-radius: 10px; }
-        a { color: #0066cc; text-decoration: none; }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Заголовки */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff, #d32f2f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem 0;
+            border-left: 5px solid #d32f2f;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        /* Герой (первый экран) */
+        .hero {
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b3c0;
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+
+        .badge {
+            background: #d32f2f20;
+            color: #ff6b6b;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d32f2f40;
+        }
+
+        /* Карточки цен */
+        .price-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .price-card {
+            background: #111317;
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #2a2c33;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.5);
+        }
+
+        .price-card:hover {
+            transform: translateY(-6px);
+            border-color: #d32f2f;
+            box-shadow: 0 25px 35px -12px rgba(211, 47, 47, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .age {
+            font-size: 1rem;
+            background: #1e2028;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            color: #cbd0e0;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #d32f2f;
+            margin: 0.8rem 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #8e92a5;
+        }
+
+        .disciplines {
+            margin: 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .discipline-tag {
+            background: #1f2129;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            font-weight: bold;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #d32f2f;
+            color: #d32f2f;
+        }
+
+        .btn-outline:hover {
+            background: #d32f2f;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #b71c1c;
+            transform: scale(1.02);
+        }
+
+        /* Расписание */
+        .schedule {
+            background: #0e1016;
+            border-radius: 28px;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border: 1px solid #252830;
+        }
+
+        .days {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .day-card {
+            background: #161a22;
+            border-radius: 20px;
+            padding: 1rem;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .day-name {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #d32f2f;
+        }
+
+        .time {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .sport-type {
+            font-size: 0.85rem;
+            color: #aaaec2;
+        }
+
+        /* Контакты и CTA */
+        .contact-section {
+            background: linear-gradient(145deg, #0d0f14, #090b10);
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 1px solid #2a2c33;
+        }
+
+        .contact-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-item {
+            background: #1a1d26;
+            padding: 0.8rem 1.6rem;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 500;
+            transition: 0.2s;
+            text-decoration: none;
+            color: #e6e9f0;
+        }
+
+        .contact-item:hover {
+            background: #d32f2f;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #5f637a;
+            margin-top: 3rem;
+            border-top: 1px solid #1f222b;
+            padding-top: 2rem;
+        }
+
+        /* адаптация */
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 1.2rem;
+            }
+            .price-card {
+                min-width: 100%;
+            }
+            .day-card {
+                min-width: 130px;
+            }
+        }
+
+        .highlight {
+            color: #d32f2f;
+        }
+        .btn-wa {
+            background: #25D366;
+            border: none;
+        }
+        .btn-wa:hover {
+            background: #128C7E;
+        }
     </style>
 </head>
 <body>
-    <h1>Студия ремонта «Мастерок»</h1>
-    <p>Работаем честно, быстро, с гарантией.</p>
-
-    <h2>Цены</h2>
-    <div class="price">🛠️ Косметический ремонт — от 3000 ₽/м²</div>
-    <div class="price">🔧 Сантехника — от 2500 ₽/точка</div>
-    <div class="price">⚡ Электрика — от 2000 ₽/точка</div>
-
-    <div class="contact">
-        <strong>📞 Контакты:</strong><br>
-        Телефон: <a href="tel:+79001234567">+7 (900) 123-45-67</a><br>
-        Email: <a href="mailto:masterok@example.com">masterok@example.com</a><br>
-        Telegram: <a href="https://t.me/masterok">@masterok</a>
+<div class="container">
+    <div class="hero">
+        <div class="badge">🔥 Официальная секция бойцовского клуба 🔥</div>
+        <h1>Стань сильнее духом и телом</h1>
+        <p>Бокс | АРБ (Армейский рукопашный бой) | Дзюдо<br>Группы для взрослых и детей. Первая тренировка — бесплатно!</p>
     </div>
 
-    <p style="font-size: 0.8em; margin-top: 30px;">📍 Работаем в Москве и области</p>
+    <!-- Блок цен -->
+    <h2>💰 Абонементы на месяц</h2>
+    <div class="price-grid">
+        <div class="price-card">
+            <div class="card-title">ВЗРОСЛЫЕ</div>
+            <div class="age">18+ лет</div>
+            <div class="price">6 500 ₽ <span>/ месяц</span></div>
+            <div class="disciplines">
+                <span class="discipline-tag">🥊 Бокс</span>
+                <span class="discipline-tag">⚔️ АРБ</span>
+                <span class="discipline-tag">🥋 Дзюдо</span>
+            </div>
+            <a href="#contact" class="btn">Записаться →</a>
+        </div>
+
+        <div class="price-card">
+            <div class="card-title">ДЕТИ</div>
+            <div class="age">4 – 17 лет</div>
+            <div class="price">5 000 ₽ <span>/ месяц</span></div>
+            <div class="disciplines">
+                <span class="discipline-tag">🥊 Бокс</span>
+                <span class="discipline-tag">⚔️ АРБ</span>
+                <span class="discipline-tag">🥋 Дзюдо</span>
+            </div>
+            <a href="#contact" class="btn">Записаться →</a>
+        </div>
+    </div>
+
+    <!-- Расписание -->
+    <h2>📅 Расписание тренировок</h2>
+    <div class="schedule">
+        <div class="days">
+            <div class="day-card">
+                <div class="day-name">ПН / СР / ПТ</div>
+                <div class="time">19:00 – 20:30</div>
+                <div class="sport-type">🥊 Бокс</div>
+            </div>
+            <div class="day-card">
+                <div class="day-name">ВТ / ЧТ / СБ</div>
+                <div class="time">18:00 – 19:30</div>
+                <div class="sport-type">⚔️ АРБ + 🥋 Дзюдо</div>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.9rem; text-align: center;">✔️ Занятия ведут мастера спорта. ✔️ Разминка, спарринги, ОФП. ✔️ Детские группы — игровая форма, дисциплина.</p>
+    </div>
+
+    <!-- Почему мы + доп. блок -->
+    <h2>💪 Почему выбирают нас</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; margin: 1rem 0 2rem 0;">
+        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Травмобезопасность, зал с рингом и татами</div>
+        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Удобное метро, раздевалки, душ</div>
+        <div style="flex:1; background:#111317; border-radius: 20px; padding: 1.2rem;"><span style="color:#d32f2f; font-weight:800;">✓</span> Пробная неделя — бесплатно!</div>
+    </div>
+
+    <!-- Контакты и кнопки связи -->
+    <div id="contact" class="contact-section">
+        <h3 style="margin-top:0;">📞 Начни тренировки сегодня</h3>
+        <p style="margin-bottom: 1rem;">Остались вопросы? Позвоните или напишите — подберём удобную группу.</p>
+        <div class="contact-icons">
+            <a href="tel:+79001234567" class="contact-item">📱 +7 (900) 123-45-67</a>
+            <a href="https://wa.me/79001234567" target="_blank" class="contact-item btn-wa" style="background:#1f2c1f;">💬 WhatsApp</a>
+            <a href="https://t.me/your_fightclub" target="_blank" class="contact-item">📲 Telegram</a>
+        </div>
+        <div style="margin-top: 1rem;">
+            <a href="https://wa.me/79001234567?text=Здравствуйте! Хочу записаться на тренировку." target="_blank" class="btn btn-wa" style="width: auto; padding: 0.8rem 2rem;">✍️ Купить абонемент онлайн</a>
+            <p style="margin-top: 0.8rem; font-size: 0.85rem;">📍 Адрес: г. Москва, ул. Спортивная, 10 (м. Спортивная, 5 мин пешком)</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © Бойцовский клуб "Титан" | 3 тренировки в неделю | Гибкая система абонементов
+    </div>
+</div>
 </body>
 </html>
