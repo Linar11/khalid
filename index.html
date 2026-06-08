@@ -138,6 +138,19 @@
             color: #8e92a5;
         }
 
+        /* Стиль для надписи "Первая тренировка бесплатно" */
+        .free-trial {
+            background: #F5B70020;
+            color: #F5B700;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 0.5rem 0 0.2rem;
+            border: 1px solid #F5B700;
+        }
+
         .disciplines {
             margin: 1.5rem 0;
             display: flex;
@@ -358,10 +371,12 @@
 
     <h2>Абонементы на месяц</h2>
     <div class="price-grid">
+        <!-- ДЕТИ -->
         <div class="price-card">
             <div class="card-title">ДЕТИ</div>
             <div class="age">4 – 17 лет</div>
             <div class="price">5 000 ₽ <span>/ месяц</span></div>
+            <div class="free-trial">🔥 Первая тренировка бесплатно!</div>
             <div class="disciplines">
                 <span class="discipline-tag">🥊 Бокс</span>
                 <span class="discipline-tag">⚔️ АРБ</span>
@@ -369,10 +384,12 @@
             </div>
             <a href="#contact" class="btn">Записаться на бесплатную тренировку →</a>
         </div>
+        <!-- ВЗРОСЛЫЕ -->
         <div class="price-card">
             <div class="card-title">ВЗРОСЛЫЕ</div>
             <div class="age">18+ лет</div>
             <div class="price">6 500 ₽ <span>/ месяц</span></div>
+            <div class="free-trial">🔥 Первая тренировка бесплатно!</div>
             <div class="disciplines">
                 <span class="discipline-tag">🥊 Бокс</span>
             </div>
@@ -413,11 +430,9 @@
         <h3 style="margin-top:0;">📞 Свяжитесь с нами</h3>
         <p style="margin-bottom: 1rem;">Напишите в мессенджер MAX или позвоните — ответим на все вопросы</p>
         <div class="contact-links">
-            <!-- Кнопка с иконкой MAX, текст "написать в MAX" -->
             <a href="https://max.ru/u/f9LHodD0cOL8jAZzB-AtY907kMk9fnUqaW2cyHfOf726tuXMKcr3D6RZs6E" target="_blank" class="contact-link">
                 <img src="MAX-32x32.png" alt="MAX"> написать в MAX
             </a>
-            <!-- Кнопка группы MAX с той же иконкой -->
             <a href="https://max.ru/join/7At9c_9G-VrIzvG8aIDENjZ1vYM5IQ96qqL2g5IgRb0" target="_blank" class="contact-link">
                 <img src="MAX-32x32.png" alt="MAX"> Группа MAX (чат клуба)
             </a>
@@ -426,7 +441,6 @@
             <a href="tel:+79600567002" class="phone-link">📞 +7 (960) 056-70-02</a>
         </div>
         <div style="margin-top: 1rem;">
-            <!-- Адрес внизу теперь тоже кликабельный, ведёт на те же Яндекс.Карты -->
             <a href="https://yandex.ru/maps/?text=клуб%20единоборств%20халид%20казань%20ул%20фрунзе%2017&mode=search"
                class="address-bottom" target="_blank">
                 📍 г. Казань, ул. Фрунзе, д.17 (около первого подъезда)
