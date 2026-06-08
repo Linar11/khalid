@@ -25,23 +25,26 @@
         }
 
         /* Жёлтые акценты */
-        .badge, .btn, .day-name, .price, .highlight, .contact-link, h2 {
+        .btn, .day-name, .price, .contact-link, h2 {
             border-left-color: #F5B700;
         }
 
-        h1 {
-            font-size: 3.2rem; /* Увеличили */
+        /* Увеличенный бейдж с названием */
+        .badge {
+            background: #F5B70020;
+            color: #F5B700;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            display: inline-block;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff, #F5B700);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.25rem;
+            font-size: 1.8rem;  /* Крупнее */
+            margin-bottom: 1rem;
+            border: 2px solid #F5B700;
+            letter-spacing: 1px;
         }
 
         .subhead {
-            font-size: 1.3rem; /* Чуть меньше, чем было (было 1.2rem) */
+            font-size: 1.3rem;
             color: #ccc;
             margin-top: 0.5rem;
         }
@@ -65,27 +68,22 @@
             margin-bottom: 1rem;
         }
 
+        /* Кликабельный адрес */
         .address-top {
             background: #111;
             display: inline-block;
-            padding: 0.4rem 1.2rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #F5B700;
             border: 1px solid #F5B700;
             margin-top: 0.8rem;
+            text-decoration: none;
+            transition: 0.2s;
         }
-
-        .badge {
-            background: #F5B70020;
-            color: #F5B700;
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            display: inline-block;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            border: 1px solid #F5B70060;
+        .address-top:hover {
+            background: #F5B700;
+            color: #0a0a0a;
         }
 
         .price-grid {
@@ -297,8 +295,9 @@
         }
 
         @media (max-width: 700px) {
-            h1 {
-                font-size: 2.2rem;
+            .badge {
+                font-size: 1.2rem;
+                padding: 0.4rem 1rem;
             }
             .subhead {
                 font-size: 1rem;
@@ -325,10 +324,14 @@
 <body>
 <div class="container">
     <div class="hero">
+        <!-- Оставляем только badge с огоньками, делаем его крупнее -->
         <div class="badge">🔥 Клуб единоборств Халид 🔥</div>
-        <h1>Клуб единоборств Халид</h1>
         <div class="subhead">Стань сильнее духом и телом</div>
-        <div class="address-top">📍 г. Казань, ул. Фрунзе, д.17 (около первого подъезда)</div>
+        <!-- Кликабельный адрес: Яндекс.Карты -->
+        <a href="https://yandex.ru/maps/?text=Казань, ул. Фрунзе, 17&mode=search&ll=49.123,55.796&z=17" 
+           class="address-top" target="_blank">
+            📍 г. Казань, ул. Фрунзе, д.17 (около первого подъезда)
+        </a>
     </div>
 
     <h2>Абонементы на месяц</h2>
@@ -375,7 +378,6 @@
         <p style="margin-top: 1.2rem; font-size: 0.9rem; text-align: center;">✔️ Разминка, спарринги, ОФП. ✔️ Детские группы — игровая форма, дисциплина.</p>
     </div>
 
-    <!-- Блок с заслуженными мастерами спорта -->
     <div class="master-sport">
         🥇 Занятия ведут заслуженные мастера спорта 🥇
     </div>
